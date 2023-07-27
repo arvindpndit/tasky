@@ -1,0 +1,24 @@
+.task-list,
+.task-details,
+.add-task {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.task-list h2,
+.task-details h2,
+.add-task h2 {
+  margin-top: 0;
+}
+
+.task-item {
+  list-style: none;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.task-item span {
+  display: block;
+}
