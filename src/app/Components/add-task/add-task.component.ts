@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskInterface } from 'src/app/Interfaces/task.interface';
+import { TaskInterface } from 'src/app/interfaces/task.interface';
 
 @Component({
   selector: 'app-add-task',
