@@ -1,10 +1,10 @@
-.task-list {
+.task-details {
   flex: 1;
   min-width: 300px;
   padding: 20px;
 }
 
-.task-list h2 {
+.task-details h2 {
   margin-top: 0;
 }
 
