@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
-import { TaskInterface } from 'src/app/interfaces/task.interface';
+import { Injectable } from '@angular/core';
+import { TaskInterface } from '../interfaces/task.interface';
 
-@Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css'],
+@Injectable({
+  providedIn: 'root',
 })
-export class TaskListComponent {
-  task: TaskInterface[] = [
+export class TaskService {
+  private tasks: TaskInterface[] = [
     {
       id: 5,
       title: 'task 1',
-      description: 'this is task 1 ',
+      description: 'complete this assignment asap ',
       dueDate: new Date(),
-      priority: 'hign',
+      priority: 'high',
     },
     {
       id: 6,
@@ -37,4 +35,8 @@ export class TaskListComponent {
       priority: 'low',
     },
   ];
+
+  getTasks(): TaskInterface[] {
+    return this.tasks;
+  }
 }
