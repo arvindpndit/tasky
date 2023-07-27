@@ -7,6 +7,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { TaskComponent } from './Components/task/task.component';
 import { TaskListComponent } from './Components/task-list/task-list.component';
 import { TaskDetailComponent } from './Components/task-detail/task-detail.component';
+import { AddTaskComponent } from './Components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TaskDetailComponent } from './Components/task-detail/task-detail.compon
     NavbarComponent,
     TaskComponent,
     TaskListComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
