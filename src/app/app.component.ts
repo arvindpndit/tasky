@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { TaskComponent } from './Components/task/task.component';
 
 @Component({
   selector: 'app-root',
