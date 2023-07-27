@@ -1,11 +1,12 @@
 <div class="task-list">
   <h2>Task List</h2>
-  <ul class="task-items">
-    <!-- Task list items will be dynamically generated using Angular -->
+  <ul class="task-items" *ngFor="let task of task">
     <li class="task-item">
-      <span class="task-title">Sample Task</span>
-      <span class="task-due-date">Due: 2023-07-27</span>
-      <span class="task-priority">Priority: High</span>
+      <span class="task-title">{{ task.title }}</span>
+      <span class="task-due-date">Due: {{ task.dueDate }}</span>
+      <span class="task-priority">Priority: {{ task.priority }}</span>
     </li>
   </ul>
 </div>
+
+<!-- <div *ngFor="let task of task">{{ task.title }}</div> -->
