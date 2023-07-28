@@ -39,4 +39,8 @@ export class TaskService {
   getTasks(): TaskInterface[] {
     return this.tasks;
   }
+
+  addTask(task: TaskInterface): void {
+    this.tasks.push(task);
+  }
 }
