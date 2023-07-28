@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.task-title {
+  font-weight: bold;
+}
+
 .task-list h2 {
   margin-top: 0;
 }

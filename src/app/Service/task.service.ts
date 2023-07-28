@@ -12,6 +12,7 @@ export class TaskService {
       description: 'complete this assignment asap ',
       dueDate: new Date(),
       priority: 'high',
+      status: 'to-do',
     },
     {
       id: 6,
@@ -19,6 +20,7 @@ export class TaskService {
       description: 'this is task 2 ',
       dueDate: new Date(),
       priority: 'low',
+      status: 'to-do',
     },
     {
       id: 7,
@@ -26,6 +28,7 @@ export class TaskService {
       description: 'this is task 3 ',
       dueDate: new Date(),
       priority: 'medium',
+      status: 'to-do',
     },
     {
       id: 1,
@@ -33,6 +36,7 @@ export class TaskService {
       description: 'this is task 8 ',
       dueDate: new Date(),
       priority: 'low',
+      status: 'to-do',
     },
   ];
 

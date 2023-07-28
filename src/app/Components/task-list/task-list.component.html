@@ -3,8 +3,10 @@
   <ul class="task-items" *ngFor="let task of tasks">
     <li class="task-item">
       <span class="task-title">{{ task.title }}</span>
-      <span class="task-due-date">Due: {{ task.dueDate }}</span>
+      <span class="task-description">{{ task.description }}</span>
+      <span class="task-due-date">Due: {{ task.dueDate.toDateString() }}</span>
       <span class="task-priority">Priority: {{ task.priority }}</span>
+      <span class="task-priority">Status: {{ task.status }}</span>
     </li>
   </ul>
 </div>
