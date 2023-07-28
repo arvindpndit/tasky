@@ -13,4 +13,14 @@ export class TaskListComponent {
   constructor(private taskService: TaskService) {
     this.tasks = this.taskService.getTasks();
   }
+
+  onDelete(id: number) {
+    const index = this.tasks.findIndex((task) => task.id === id);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+      console.log('Task deleted successfully.');
+    } else {
+      console.log('Task not found.');
+    }
+  }
 }
