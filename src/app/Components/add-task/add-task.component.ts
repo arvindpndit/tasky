@@ -19,11 +19,20 @@ export class AddTaskComponent {
 
   addTask(title: string, description: string, dueDate: Date, priority: string) {
     console.log(title, description, dueDate, priority);
-    title &&
-      description &&
-      dueDate &&
-      priority &&
+    if (title && description && dueDate && priority) {
       this.taskService.addTask(this.newTask);
+      this.resetNewTask();
+    }
+  }
+  private resetNewTask() {
+    this.newTask = {
+      id: this.generateNewId(),
+      title: '',
+      description: '',
+      dueDate: new Date(),
+      priority: '',
+      status: 'to-do',
+    }; // Reset the newTask object to an empty state.
   }
 
   private generateNewId(): number {

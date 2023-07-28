@@ -5,46 +5,52 @@ import { TaskInterface } from '../interfaces/task.interface';
   providedIn: 'root',
 })
 export class TaskService {
-  private tasks: TaskInterface[] = [
-    {
-      id: 5,
-      title: 'task 1',
-      description: 'complete this assignment asap ',
-      dueDate: new Date(),
-      priority: 'high',
-      status: 'to-do',
-    },
-    {
-      id: 6,
-      title: 'task 2',
-      description: 'this is task 2 ',
-      dueDate: new Date(),
-      priority: 'low',
-      status: 'to-do',
-    },
-    {
-      id: 7,
-      title: 'task 3',
-      description: 'this is task 3 ',
-      dueDate: new Date(),
-      priority: 'medium',
-      status: 'to-do',
-    },
-    {
-      id: 1,
-      title: 'task 8',
-      description: 'this is task 8 ',
-      dueDate: new Date(),
-      priority: 'low',
-      status: 'to-do',
-    },
-  ];
+  private tasks: TaskInterface[] = [];
+
+  constructor() {
+    this.loadTasks();
+  }
 
   getTasks(): TaskInterface[] {
     return this.tasks;
   }
 
   addTask(task: TaskInterface): void {
+    console.log('this.tasks type:', typeof this.tasks);
+    console.log('this.tasks value:', this.tasks);
+
+    if (!Array.isArray(this.tasks)) {
+      this.tasks = [];
+    }
+
     this.tasks.push(task);
+    this.saveTasks();
+  }
+
+  private saveTasks(): void {
+    const tasksJSON = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJSON);
+  }
+
+  private loadTasks(): void {
+    const tasksJSON = localStorage.getItem('tasks');
+
+    if (tasksJSON) {
+      try {
+        const parsedTasks = JSON.parse(tasksJSON);
+        if (Array.isArray(parsedTasks)) {
+          this.tasks = parsedTasks;
+        } else {
+          console.error('Stored tasks in localStorage is not an array.');
+          this.tasks = [];
+        }
+      } catch (error) {
+        console.error('Error parsing tasks from localStorage:', error);
+        this.tasks = [];
+      }
+    } else {
+      this.tasks = [];
+      this.saveTasks();
+    }
   }
 }
