@@ -18,6 +18,7 @@ export class TaskListComponent {
     const index = this.tasks.findIndex((task) => task.id === id);
     if (index !== -1) {
       this.tasks.splice(index, 1);
+      this.taskService.saveTasks();
       console.log('Task deleted successfully.');
     } else {
       console.log('Task not found.');

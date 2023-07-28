@@ -27,7 +27,7 @@ export class TaskService {
     this.saveTasks();
   }
 
-  private saveTasks(): void {
+  saveTasks(): void {
     const tasksJSON = JSON.stringify(this.tasks);
     localStorage.setItem('tasks', tasksJSON);
   }
