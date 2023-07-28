@@ -14,7 +14,7 @@ export class AddTaskComponent {
     description: '',
     dueDate: new Date(),
     priority: '',
-    status: '',
+    status: 'to-do',
   };
 
   addTask(title: string, description: string, dueDate: Date, priority: string) {
