@@ -9,9 +9,34 @@ import { TaskInterface } from 'src/app/interfaces/task.interface';
 })
 export class TaskListComponent {
   tasks: TaskInterface[];
+  showPopup = false;
+  selectedStatus = '';
+  taskIdToUpdate: number | undefined;
 
   constructor(private taskService: TaskService) {
     this.tasks = this.taskService.getTasks();
+  }
+
+  showStatusPopup(task: TaskInterface, id: number) {
+    this.selectedStatus = task.status;
+    this.taskIdToUpdate = id;
+    this.showPopup = true;
+  }
+
+  updateStatus() {
+    const taskToUpdate = this.tasks.find(
+      (task: TaskInterface) => task.id === this.taskIdToUpdate
+    );
+
+    if (taskToUpdate) {
+      taskToUpdate.status = this.selectedStatus;
+    }
+
+    this.showPopup = false;
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 
   onDelete(id: number) {

@@ -9,10 +9,44 @@
         <span class="task-due-date">Due: {{ task.dueDate }}</span>
         <span class="task-priority">Priority: {{ task.priority }}</span>
         <span class="task-priority">Status: {{ task.status }}</span>
+        <button (click)="showStatusPopup(task, task.id)">Change Status</button>
         <button (click)="onDelete(task.id)">Delete</button>
       </li>
     </ul>
   </ng-template>
+</div>
+
+<div class="status-popup" *ngIf="showPopup">
+  <h3>Select Status</h3>
+  <label>
+    <input
+      type="radio"
+      name="status"
+      value="To-Do"
+      [(ngModel)]="selectedStatus"
+    />
+    To-Do
+  </label>
+  <label>
+    <input
+      type="radio"
+      name="status"
+      value="In-Progress"
+      [(ngModel)]="selectedStatus"
+    />
+    In-Progress
+  </label>
+  <label>
+    <input
+      type="radio"
+      name="status"
+      value="Completed"
+      [(ngModel)]="selectedStatus"
+    />
+    Completed
+  </label>
+  <button (click)="updateStatus()">Save</button>
+  <button (click)="closePopup()">Cancel</button>
 </div>
 
 <!-- <div *ngFor="let task of task">{{ task.title }}</div> -->
