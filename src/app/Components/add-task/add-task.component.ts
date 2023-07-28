@@ -18,7 +18,11 @@ export class AddTaskComponent {
 
   addTask(title: string, description: string, dueDate: Date, priority: string) {
     console.log(title, description, dueDate, priority);
-    this.taskService.addTask(this.newTask);
+    title &&
+      description &&
+      dueDate &&
+      priority &&
+      this.taskService.addTask(this.newTask);
   }
 
   private generateNewId(): number {
