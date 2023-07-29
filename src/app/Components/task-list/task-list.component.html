@@ -1,5 +1,9 @@
 <div class="task-list">
   <h2>Task List</h2>
+  <h3>Filter</h3>
+  <button (click)="sortTasksByDueDate()">Sort by Due Date</button>
+  <button (click)="sortTasksByPriority()">Sort by Priority</button>
+  <button (click)="sortTasksByStatus()">Sort by Status</button>
   <div *ngIf="tasks.length === 0; else elseBlock">No Task, Add Tasks 🚀</div>
   <ng-template #elseBlock>
     <ul class="task-items" *ngFor="let task of tasks">

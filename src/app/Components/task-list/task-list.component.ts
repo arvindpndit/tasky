@@ -49,4 +49,35 @@ export class TaskListComponent {
       console.log('Task not found.');
     }
   }
+
+  sortTasksByDueDate() {
+    this.tasks.sort((a: TaskInterface, b: TaskInterface) => {
+      const dateA = new Date(a.dueDate);
+      const dateB = new Date(b.dueDate);
+      return dateA.getTime() - dateB.getTime();
+    });
+  }
+
+  sortTasksByPriority() {
+    const priorityMap: { [key: string]: number } = {
+      low: 3,
+      medium: 2,
+      high: 1,
+    };
+
+    this.tasks.sort((a: TaskInterface, b: TaskInterface) => {
+      const priorityA = priorityMap[a.priority.toLowerCase()];
+      const priorityB = priorityMap[b.priority.toLowerCase()];
+
+      return priorityA - priorityB;
+    });
+  }
+
+  sortTasksByStatus() {
+    this.tasks.sort((a: TaskInterface, b: TaskInterface) => {
+      if (a.status < b.status) return -1;
+      if (a.status > b.status) return 1;
+      return 0;
+    });
+  }
 }
