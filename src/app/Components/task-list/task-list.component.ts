@@ -13,6 +13,8 @@ export class TaskListComponent {
   showPopup = false;
   selectedStatus = '';
   taskIdToUpdate: number | undefined;
+  editingTaskId: number | null = null;
+  editingTask: any = null;
 
   constructor(private taskService: TaskService) {
     this.tasks = this.taskService.getTasks();
@@ -84,7 +86,7 @@ export class TaskListComponent {
 
   exportToCSV() {
     const csvData = Papa.unparse(this.tasks, {
-      header: true, // Include header row with field names
+      header: true,
     });
 
     const blob = new Blob([csvData], { type: 'text/csv' });
@@ -94,5 +96,33 @@ export class TaskListComponent {
     a.download = 'tasks.csv';
     a.click();
     window.URL.revokeObjectURL(url);
+  }
+
+  editTask(task: TaskInterface) {
+    this.editingTaskId = task.id;
+    this.editingTask = { ...task };
+  }
+
+  isEditingTask(taskId: number): boolean {
+    return this.editingTaskId === taskId;
+  }
+
+  updateTask(task: TaskInterface) {
+    const taskToUpdate = this.tasks.find(
+      (t: TaskInterface) => t.id === task.id
+    );
+    if (taskToUpdate) {
+      taskToUpdate.title = this.editingTask.title;
+      taskToUpdate.description = this.editingTask.description;
+      taskToUpdate.dueDate = this.editingTask.dueDate;
+      taskToUpdate.priority = this.editingTask.priority;
+    }
+
+    this.editingTaskId = null;
+  }
+
+  cancelEdit() {
+    this.editingTaskId = null;
+    this.editingTask = null;
   }
 }

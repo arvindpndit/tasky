@@ -70,8 +70,6 @@ button.delete-btn {
 }
 
 .task-item {
-  border: 1px solid #ccc;
-  /* border-radius: 5px; */
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -134,6 +132,102 @@ label {
 
 .status-popup button {
   margin-top: 10px;
+}
+
+.add-task {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.add-task h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: cursive;
+}
+
+.form-group select {
+  appearance: none;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0H0L5 5z'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  background-size: 10px;
+}
+.add-task {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.add-task h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: cursive;
+}
+
+.form-group select {
+  appearance: none;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0H0L5 5z'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  background-size: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #febbcc;
+
+  font-family: cursive;
+}
+
+button[type="submit"]:hover {
+  background-color: #fba1b7;
 }
 
 @media (max-width: 600px) {

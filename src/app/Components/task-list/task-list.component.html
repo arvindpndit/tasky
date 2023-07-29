@@ -4,6 +4,7 @@
   <div *ngIf="tasks.length === 0; else elseBlock" class="no-task-message">
     Currently, there's no task! So Add your task 📝
   </div>
+
   <ng-template #elseBlock>
     <h3 class="filter-heading">Sort by</h3>
     <div class="btn-class">
@@ -17,17 +18,72 @@
     </div>
     <ul class="task-items" *ngFor="let task of tasks">
       <li class="task-item">
-        <span class="task-title">{{ task.title }}</span>
-        <span class="task-description">{{ task.description }}</span>
-        <span class="task-due-date">Due: {{ task.dueDate }}</span>
-        <span class="task-priority">Priority: {{ task.priority }}</span>
-        <span class="task-status">Status: {{ task.status }}</span>
-        <button class="status-btn" (click)="showStatusPopup(task, task.id)">
-          Change Status
-        </button>
-        <button class="delete-btn" (click)="onDelete(task.id)">Delete</button>
+        <ng-container *ngIf="isEditingTask(task.id)">
+          <form (submit)="updateTask(task)">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                required
+                [(ngModel)]="editingTask.title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                [(ngModel)]="editingTask.description"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="due-date">Due Date:</label>
+              <input
+                type="date"
+                id="due-date"
+                name="due-date"
+                required
+                [(ngModel)]="editingTask.dueDate"
+              />
+            </div>
+            <div class="form-group">
+              <label for="priority">Priority:</label>
+              <select
+                id="priority"
+                name="priority"
+                required
+                [(ngModel)]="editingTask.priority"
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <button type="submit">Save</button>
+            <button type="button" (click)="cancelEdit()">Cancel</button>
+          </form>
+        </ng-container>
+
+        <ng-container *ngIf="!isEditingTask(task.id)">
+          <span class="task-title">{{ task.title }}</span>
+          <span class="task-description">{{ task.description }}</span>
+          <span class="task-due-date">Due: {{ task.dueDate }}</span>
+          <span class="task-priority">Priority: {{ task.priority }}</span>
+          <span class="task-status">Status: {{ task.status }}</span>
+          <button class="edit-btn" (click)="editTask(task)">Edit</button>
+          <button class="status-btn" (click)="showStatusPopup(task, task.id)">
+            Change Status
+          </button>
+          <button class="delete-btn" (click)="onDelete(task.id)">Delete</button>
+        </ng-container>
       </li>
     </ul>
+
     <button class="export-btn" (click)="exportToCSV()">
       Export Tasks to CSV
     </button>
