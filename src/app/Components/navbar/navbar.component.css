@@ -1,55 +1,80 @@
 nav {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px;
+  backdrop-filter: blur(8px);
+  background-color: #fff0f5;
+  color: black;
+  font-size: 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .brand {
-  font-size: 24px;
+  color: black;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
 }
 
 .menu li {
   margin-left: 20px;
 }
 
+.menu li:first-child {
+  margin-left: 0;
+}
+
 .menu li a {
   text-decoration: none;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 4px;
+  color: black;
+  padding: 10px;
 }
 
-.menu li a:hover {
-  background-color: #0056b3;
-}
-
-/* Media queries for responsiveness */
-@media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-
+/* Media query for responsiveness */
+@media (max-width: 768px) {
   .menu {
-    margin-top: 10px;
+    display: none;
   }
 
-  .menu li {
+  /* Show the menu when the hamburger icon is clicked */
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    border: 1px solid #fff;
+  }
+
+  /* Style the hamburger icon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
     margin: 5px 0;
   }
 }

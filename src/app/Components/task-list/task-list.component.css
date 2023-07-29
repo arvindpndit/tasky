@@ -1,39 +1,148 @@
-.task-list {
-  flex: 1;
-  min-width: 300px;
+.task-list-container {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
+  margin-top: 50px;
 }
 
-.task-title {
+h2 {
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
+.btn-class {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
-.task-list h2 {
-  margin-top: 0;
+.no-task-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: cursive;
+}
+
+button.export-btn {
+  background-color: #febbcc;
+  color: black;
+}
+
+button.filter-btn {
+  background-color: #ffddcc;
+  color: black;
+}
+
+button.sort-btn {
+  background-color: #fbbc05;
+  color: #fff;
+}
+
+button.status-btn {
+  background-color: #ffcccc;
+  color: black;
+}
+
+button.delete-btn {
+  background-color: #f14336;
+  color: #fff;
+}
+
+.task-items {
+  list-style: none;
+  padding: 0;
 }
 
 .task-item {
-  list-style: none;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
+  /* border-radius: 5px; */
   padding: 10px;
+  margin-bottom: 10px;
 }
 
-.task-item span {
+.task-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+.task-description {
+  font-size: 16px;
+  color: #666;
   display: block;
 }
 
-/* Styles for the status popup */
+.task-due-date {
+  font-size: 14px;
+  color: #999;
+  display: block;
+}
+
+.task-priority {
+  font-size: 14px;
+  color: #e91e63;
+  display: block;
+}
+
+.task-status {
+  font-size: 14px;
+  color: #2196f3;
+  display: block;
+}
+
+.task-title,
+.task-description,
+.task-due-date,
+.task-priority,
+.task-status {
+  display: block;
+  margin-bottom: 5px;
+}
+
 .status-popup {
   position: fixed;
+  width: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.status-popup button {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .task-list {
+    padding: 10px;
+  }
+
+  .status-popup {
+    width: 80%;
+    max-width: 300px;
+  }
 }

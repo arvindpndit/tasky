@@ -1,45 +1,57 @@
 .add-task {
-  flex: 1;
-  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  margin-top: 50px;
 }
 
 .add-task h2 {
-  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.task-item {
-  list-style: none;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
+.task-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.task-item span {
-  display: block;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.task-form label {
-  display: block;
-  margin-bottom: 5px;
+.form-group label {
+  font-weight: bold;
 }
 
-.task-form input[type="text"],
-.task-form textarea,
-.task-form select {
+.form-group input,
+.form-group textarea,
+.form-group select {
   width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: cursive;
 }
 
-.task-form button {
-  background-color: #007bff;
-  color: #fff;
+.form-group select {
+  appearance: none;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0H0L5 5z'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  background-size: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #febbcc;
+  color: black;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
+  font-family: cursive;
+  font-size: 16px;
+  width: 100%;
 }
 
-.task-form button:hover {
-  background-color: #0056b3;
+button[type="submit"]:hover {
+  background-color: #fba1b7;
 }
