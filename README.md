@@ -1,27 +1,68 @@
-# Tasky
+# Tasky📔 - Task Management Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+Tasky📔 is a user-friendly task management web application built using Angular. It allows users to efficiently organize their tasks with various details such as title, description, due date, and priority level. The application offers an intuitive interface to add, update, edit, and delete tasks seamlessly. Tasky📔 supports data export to a CSV file, making it convenient to keep a backup or share task data with others.
 
-## Development server
+## Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Check out the live demo of Tasky📔 [here](https://tasky-ar.netlify.app/).
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User-Friendly Interface**: Tasky📔 offers an intuitive and easy-to-use interface, enabling users to manage their tasks efficiently.
 
-## Build
+- **Add and Update Tasks**: Users can add new tasks with all necessary details like title, description, due date, and priority level. Additionally, they can update the status of tasks, marking them as to-do, in-progress, or completed.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Edit and Delete Tasks**: Tasky📔 allows users to modify task details or delete tasks entirely, providing complete control over task management.
 
-## Running unit tests
+- **List View and Sorting**: The application displays tasks in a list view, enabling users to get a comprehensive overview of their tasks. Moreover, tasks can be sorted based on due date, priority, or status, facilitating better organization.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Responsive Design**: Tasky📔 is designed to be fully responsive and optimized for both desktop and mobile devices, ensuring a seamless experience across various platforms.
 
-## Running end-to-end tests
+- **CSV Export**: The application supports the export of tasks to a CSV file. This feature proves handy for creating backups or sharing task data with others.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Data Persistence**: To ensure data persistence, Tasky📔 uses local storage. This means your tasks will be saved locally on your device, even if you close the browser or refresh the page.
 
-## Further help
+## How to Use
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Add a New Task**: To add a new task, click on the "Add Task" button and fill in the required details, such as title, description, due date, and priority level.
+
+2. **Update Task Status**: Once you've added tasks, you can update their status by clicking on the corresponding task and selecting the desired status (to-do, in-progress, completed).
+
+3. **Edit or Delete Task**: If you need to make changes to a task or remove it, click on the task in the list view, and you'll find options to edit or delete it.
+
+4. **Sorting Tasks**: Use the sorting options provided to arrange tasks based on their due date, priority, or status, allowing you to focus on what matters most.
+
+5. **CSV Export**: To export tasks to a CSV file, locate the export option within the application. Clicking on it will prompt you to download the CSV file with all your task data.
+
+## Getting Started with Development
+
+If you're interested in contributing to Tasky📔 or want to set it up locally for development, follow these steps:
+
+1. **Prerequisites**: Make sure you have Node.js and Angular CLI installed on your system.
+
+2. **Clone the Repository**: Clone the Tasky📔 repository to your local machine using Git.
+
+```
+git clone https://github.com/arvindpndit/tasky.git
+```
+
+3. **Install Dependencies**: Navigate to the project folder and install the necessary dependencies.
+
+```
+cd tasky
+npm install
+```
+
+4. **Run the Application**: Start the development server and run Tasky📔 on your local machine.
+
+```
+ng serve
+```
+
+5. **Access the Application**: Open your web browser and visit `http://localhost:4200/` to access Tasky📔 locally.
+
+## Feedback and Support
+
+If you encounter any issues while using Tasky📔 or have any suggestions for improvement, please feel free to [submit an issue](https://github.com/arvindpndit/tasky/issues). We welcome your feedback and would be happy to assist with any queries.
+
+Happy task management with Tasky📔!
